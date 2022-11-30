@@ -10,6 +10,7 @@ app = Flask(__name__)
 @app.post("/perform_query")
 def perform_query():
 	user_request = request.json
+
 	file_name = user_request.get('file_name')
 	cmd1 = user_request.get('cmd1')
 	value1 = user_request.get('value1')

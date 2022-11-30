@@ -1,9 +1,9 @@
-from funcs import is_file_in_folder, filter_file, map_func
+from ..funcs import is_file_in_folder, filter_file, map_func
 
 
 def test_is_file_in_folder():
 	result = is_file_in_folder('test_file.txt')
-	assert result == True, 'Что то не так с определением есть ли файл в папке'
+	assert result is True, 'Что то не так с определением есть ли файл в папке'
 
 
 def test_filter_func(generator):

@@ -1,6 +1,6 @@
 import pytest
 
-from funcs import generator_from_file
+from ..funcs import generator_from_file
 
 
 @pytest.fixture()
