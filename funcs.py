@@ -38,9 +38,9 @@ def unique(generator: Generator, mock: Any) -> list[str]:
 
 def sort_func(generator: Generator, query: str) -> list[str]:
 	if query == 'desc':
-		reverse = False
-	else:
 		reverse = True
+	else:
+		reverse = False
 	return sorted(generator, reverse=reverse)
 
 
@@ -48,13 +48,10 @@ def limit_func(the_list: list[str], amount: int) -> list[str]:
 	return the_list[:int(amount)]
 
 
-def regex_func(generator: Generator, value: str) -> list[list[str]]:
+def regex_func(generator: Generator, value: str) -> list[str]:
 	r = re.compile(value)
-	result = [r.findall(i) for i in generator]
+	result = [i for i in generator if r.findall(i)]
 	return result
-
-# print(*regex_func(res, r"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b"))
-# print(re.findall(r"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b", stri))
 
 
 #  TODO что то вместо object должно быть но пока не понятно что
