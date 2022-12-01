@@ -1,6 +1,6 @@
 import os
 import re
-from typing import Generator, Any
+from typing import Generator, Any, Callable
 
 from constants import DATA_DIR
 
@@ -55,7 +55,7 @@ def regex_func(generator: Generator, value: str) -> list[str]:
 
 
 #  TODO что то вместо object должно быть но пока не понятно что
-my_func: dict[str, object] = {
+my_func: dict[str, Callable] = {
 	'filter': filter_file,
 	'map': map_func,
 	'limit': limit_func,
